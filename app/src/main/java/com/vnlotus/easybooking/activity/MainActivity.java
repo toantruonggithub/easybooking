@@ -69,9 +69,6 @@ public class MainActivity extends BaseActivity {
     menuIn = AnimationUtils.loadAnimation(this, R.anim.menu_in);
     menuOut = AnimationUtils.loadAnimation(this, R.anim.menu_out);
 
-    toggleView.startAnimation(menuOut);
-    isCollapse = new AtomicBoolean(true);
-
     menuIn.setAnimationListener(animationInListener);
     menuOut.setAnimationListener(animationOutListener);
 
@@ -87,6 +84,14 @@ public class MainActivity extends BaseActivity {
         }
       }
     });
+  }
+
+  @Override
+  protected void onStart() {
+    super.onStart();
+
+    toggleView.startAnimation(menuOut);
+    isCollapse = new AtomicBoolean(true);
   }
 
   @Override
