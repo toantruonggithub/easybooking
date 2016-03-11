@@ -7,18 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:text="@string/app_name"/>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:tabMode="fixed"
+                app:tabIndicatorHeight="3dp"
+                app:tabIndicatorColor="#FFFFFF"
+                app:tabSelectedTextColor="@color/colorAccent"
+                app:tabTextAppearance="@style/MyTabTextAppearance"/>
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"/>
+
     <com.ogaclejapan.arclayout.ArcLayout
         android:id="@+id/toggle_view"
         android:layout_width="@dimen/left_menu_view_w"
         android:layout_height="@dimen/left_menu_view_h"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
         app:arc_axisRadius="120dp"
-        app:arc_color="#11000000"
+        app:arc_color="#CC000000"
         app:arc_freeAngle="false"
         app:arc_origin="right"
         app:arc_radius="150dp"
-        app:arc_reverseAngle="false">
+        app:arc_reverseAngle="false"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true">
 
         <Button
             android:layout_width="48dp"
@@ -62,10 +100,11 @@
         android:id="@+id/button_toggle"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="-25dp"
         android:background="@drawable/circle_button_blue"
-        android:text=""/>
+        android:text=""
+        android:layout_marginRight="-25dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
